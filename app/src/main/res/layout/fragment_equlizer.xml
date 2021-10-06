@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Equilizer.VideoPlayerGestures.EqualizerFragment">
+
+    <!--equlizer-->
+    <LinearLayout
+        android:id="@+id/visualLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/equlizer"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:weightSum="9">
+
+
+        <LinearLayout
+            android:id="@+id/lil_eq_textbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/speener_back">
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutVisual"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutEqual"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+                <FrameLayout
+                    android:id="@+id/frl_eq_seek1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/speener_back">
+
+                    <SeekBar
+                        android:id="@+id/seekBar1"
+                        android:layout_width="250dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:rotation="270"
+                        android:thumb="@drawable/seekbar_round" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+                <FrameLayout
+                    android:id="@+id/frl_eq_seek2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/speener_back">
+
+                    <SeekBar
+                        android:id="@+id/seekBar2"
+                        android:layout_width="250dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:rotation="270"
+                        android:thumb="@drawable/seekbar_round" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+                <FrameLayout
+                    android:id="@+id/frl_eq_seek3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/speener_back">
+
+                    <SeekBar
+                        android:id="@+id/seekBar3"
+                        android:layout_width="250dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:rotation="270"
+                        android:thumb="@drawable/seekbar_round" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+                <FrameLayout
+                    android:id="@+id/frl_eq_seek4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/speener_back">
+
+                    <SeekBar
+                        android:id="@+id/seekBar4"
+                        android:layout_width="250dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:rotation="270"
+                        android:thumb="@drawable/seekbar_round" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:weightSum="9">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+                <FrameLayout
+                    android:id="@+id/frl_eq_seek5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:background="@color/speener_back">
+
+                    <SeekBar
+                        android:id="@+id/seekBar5"
+                        android:layout_width="250dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:rotation="270"
+                        android:thumb="@drawable/seekbar_round" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:text="5dB"
+                    android:textColor="@color/cardview_light_background" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/local"
+        android:icon="@drawable/ic_folder"
+        android:title="@string/local" />
+
+    <item
+        android:id="@+id/online"
+        android:icon="@drawable/online"
+        android:title="@string/online" />
+
+
+
+</menu>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/folder_item_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_folder"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentLeft="true"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_folder" />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/img_angle"
+                    android:layout_toRightOf="@+id/img_folder"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/txt_folder_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:padding="5dp"
+                            android:textStyle="bold"
+                            android:paddingEnd="30dp"
+                            android:text="abc"
+                            android:textSize="13dp" />
+
+                        <TextView
+                            android:id="@+id/txt_newtab"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignRight="@+id/txt_folder_name"
+                            android:layout_centerVertical="true"
+                            android:maxHeight="0dp"
+                            android:maxLines="1"
+                            android:background="@color/colorPrimary"
+                            android:paddingStart="3dp"
+                            android:textAllCaps="true"
+                            android:visibility="visible"
+                            android:paddingEnd="3dp"
+                            android:text="New"
+                            android:textAlignment="center"
+                            android:textColor="@color/white_back"
+                            android:textSize="8dp" />
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/txt_folder_video_no"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:padding="5dp"
+                        android:text="fd"
+                        android:textColor="@color/menu_2"
+                        android:textSize="13dp" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_angle"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_angle"
+                    android:tint="@color/menu_2" />
+
+                <!--<com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/txt_newtab"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:rotation="30"
+                    app:lottie_autoPlay="true"
+                    app:lottie_enableMergePathsForKitKatAndAbove="true"
+                    app:lottie_loop="true" />-->
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/nativeads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

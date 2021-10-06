@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.OnlineVideoFragment">
+
+    <LinearLayout
+        android:id="@+id/ol_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/rlo_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <video.player.mp4player.videoplayer.SquareFrameLayout
+                android:id="@+id/back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="22dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_back" />
+            </video.player.mp4player.videoplayer.SquareFrameLayout>
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/clear"
+                android:layout_toRightOf="@+id/back"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textCursorDrawable="@color/colorPrimary"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@color/white_back" />
+
+            <video.player.mp4player.videoplayer.SquareFrameLayout
+                android:id="@+id/clear"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/img_clear"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_close_black_24dp" />
+            </video.player.mp4player.videoplayer.SquareFrameLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/lil_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/name"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <video.player.mp4player.videoplayer.SquareFrameLayout
+                android:id="@+id/layout_gift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_gift"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop" />
+            </video.player.mp4player.videoplayer.SquareFrameLayout>
+
+            <video.player.mp4player.videoplayer.SquareFrameLayout
+                android:id="@+id/layout_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/img_ic_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:padding="19dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_search" />
+            </video.player.mp4player.videoplayer.SquareFrameLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlo_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ol_action_bar">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/loading"/>
+        <com.jcodecraeer.xrecyclerview.XRecyclerView
+            android:id="@+id/rv_suggesstion_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:clipToPadding="false"
+            android:scrollbars="vertical" />
+
+        <TextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingTop="70dp"
+            android:text="Loading..."
+            android:textColor="@color/colorPrimary"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+</RelativeLayout>
+
+

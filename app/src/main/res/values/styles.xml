@@ -1,0 +1,57 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/thim1</item>
+
+        <item name="fontFamily">@font/thim1</item> 
+    </style>
+
+    <style name="AppTheme_2" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_2</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_2</item>
+        <item name="colorAccent">@color/colorAccent_2</item>
+        <item name="android:fontFamily">@font/thim2</item>
+        <item name="fontFamily">@font/thim2</item> 
+    </style>
+
+    <style name="AppTheme_3" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_3</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_3</item>
+        <item name="colorAccent">@color/colorAccent_3</item>
+        <item name="android:fontFamily">@font/thim3</item>
+        <item name="fontFamily">@font/thim3</item>
+    </style>
+
+    <style name="AppTheme_4" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_4</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_4</item>
+        <item name="colorAccent">@color/colorAccent_4</item>
+        <item name="android:fontFamily">@font/thim4</item>
+        <item name="fontFamily">@font/thim4</item>
+    </style>
+
+    <style name="AppTheme_5" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_5</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_5</item>
+        <item name="colorAccent">@color/colorAccent_5</item>
+        <item name="android:fontFamily">@font/thim5</item>
+        <item name="fontFamily">@font/thim5</item>
+    </style>
+
+    <style name="AppTheme_6" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary_6</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark_6</item>
+        <item name="colorAccent">@color/colorAccent_6</item>
+        <item name="android:fontFamily">@font/thim6</item>
+        <item name="fontFamily">@font/thim6</item>
+    </style>
+
+    <style name="MyAlertDialogTheme" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="windowFixedWidthMajor">90%</item>
+        <item name="windowFixedWidthMinor">90%</item>
+    </style>
+
+</resources>

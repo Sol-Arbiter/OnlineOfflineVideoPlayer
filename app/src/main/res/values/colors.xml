@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#7341C2</color>
+    <color name="colorPrimaryDark">#7341C2</color>
+    <color name="colorAccent">#7341C2</color>
+
+    <color name="colorPrimary_2">#03A9F4</color>
+    <color name="colorPrimaryDark_2">#03A9F4</color>
+    <color name="colorAccent_2">#03A9F4</color>
+
+    <color name="colorPrimary_3">#F44336</color>
+    <color name="colorPrimaryDark_3">#F44336</color>
+    <color name="colorAccent_3">#F44336</color>
+
+    <color name="colorPrimary_4">#FFC107</color>
+    <color name="colorPrimaryDark_4">#FFC107</color>
+    <color name="colorAccent_4">#FFC107</color>
+
+    <color name="colorPrimary_5">#009688</color>
+    <color name="colorPrimaryDark_5">#009688</color>
+    <color name="colorAccent_5">#009688</color>
+
+    <color name="colorPrimary_6">#F44336</color>
+    <color name="colorPrimaryDark_6">#F44336</color>
+    <color name="colorAccent_6">#F44336</color>
+
+
+    <color name="speener_back">#807341C2</color>
+    <color name="speener_back_2">#8003A9F4</color>
+    <color name="speener_back_3">#80F44336</color>
+    <color name="speener_back_4">#80FFC107</color>
+    <color name="speener_back_5">#80009688</color>
+    <color name="speener_back_6">#80FD5393</color>
+
+
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+    <color name="black">#000000</color>
+    <color name="menu_2">#766e6e</color>
+    <color name="white_back">#b1ffffff</color>
+
+    <color name="grey_300">#E0E0E0</color>
+
+    <color name="equlizer">#bf000000</color>
+    <color name="light_text_color">#666565</color>
+    <color name="gray">#FF929292</color>
+    <color name="screen">#FFE0E0E0</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent_black">#800B0B0B</color>
+
+</resources>

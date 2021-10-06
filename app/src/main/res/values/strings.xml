@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Max Video Player</string>
+    <string name="name">Max Video Player</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="giraffe_player_url_empty">Please specify the address of the video playback</string>
+    <string name="small_problem">Player encountered a small problem</string>
+    <string name="not_support">player not support this device</string>
+    <string name="search">Search...</string>
+    <string name="action_add_details">Details</string>
+    <string name="api_key">AIzaSyBpT3K0OiojVRvZJWyjf35hH7kaYW9kmF4 </string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="local">Local</string>
+    <string name="online">Online</string>
+    <string name="title_notifications">Notifications</string>
+
+
+</resources>

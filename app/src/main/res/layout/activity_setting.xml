@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.setting">
+    <LinearLayout
+        android:id="@+id/ol_action_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/lil_action_bar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/back"
+                android:padding="15dp"
+                android:src="@drawable/ic_back"/>
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Setting"
+                android:textColor="#ffffff"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:padding="10dp"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/thim1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-1"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thim2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary_2"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-2"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thim3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary_3"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-3"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:padding="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/thim4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary_4"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-4"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thim5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary_5"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-5"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/thim6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@color/colorPrimary_6"
+                android:src="@drawable/ic_back"
+                android:layout_marginBottom="3dp"/>
+
+            <TextView
+                android:id="@+id/tv_tf_6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Theme-6"
+                android:textSize="10dp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
