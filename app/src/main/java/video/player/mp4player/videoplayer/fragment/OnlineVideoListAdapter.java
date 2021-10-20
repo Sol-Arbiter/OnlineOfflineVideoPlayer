@@ -16,7 +16,6 @@ import androidx.annotation.NonNull;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.ads.AdRequest;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import org.apache.commons.io.IOUtils;
@@ -52,62 +51,71 @@ public class OnlineVideoListAdapter extends XRecyclerView.Adapter<OnlineVideoLis
         this.mContext = mContext;
         this.videoList = new ArrayList<>();
 
-        mInterstitialAdMob = showAdmobFullAd(mContext);
-        this.mInterstitialAdMob.loadAd(new AdRequest.Builder()
-                .addTestDevice("0E9048D9285193167D9674E79562F5DC")
-                .addTestDevice("34D19C0181647FFA4D8F095F773F2154")
-                .build());
-
     }
 
-    private com.google.android.gms.ads.InterstitialAd mInterstitialAdMob;
-
-    private com.google.android.gms.ads.InterstitialAd showAdmobFullAd(Context context) {
-        com.google.android.gms.ads.InterstitialAd interstitialAd = new com.google.android.gms.ads.InterstitialAd(context);
-        interstitialAd.setAdUnitId(context.getString(R.string.interstitial_ad_unit_id));
-        interstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
-            @Override
-            public void onAdClosed() {
-                mInterstitialAdMob.loadAd(new AdRequest.Builder()
-                        .addTestDevice("0E9048D9285193167D9674E79562F5DC")
-                        .addTestDevice("34D19C0181647FFA4D8F095F773F2154")
-                        .build());
-            }
-
-            @Override
-            public void onAdLoaded() {
-            }
-
-            @Override
-            public void onAdOpened() {
-            }
-        });
-        return interstitialAd;
-    }
 
     private String getDuration(String duration) {
         String s1 = duration.replace("PT", "");
         String t = "";
-        if (s1.contains("H")) {
-            String h = s1.split("H")[0];
-            String m = s1.split("H")[1].split("M")[0];
-            String s = s1.split("H")[1].split("M")[1].replace("S", "");
-            t = h.concat(":").concat(m).concat(":").concat(s);
+        String h = "", m = "", s = "";
+//        try {
+        if (s1.contains("H") && s1.contains("M") && s1.contains("S")) {
+            h = s1.split("H")[0];
+            m = s1.split("H")[1].split("M")[0];
+            s = s1.split("H")[1].split("M")[1].split("S")[0];
+            t = h + ":" + m + ":" + s;
+        } else if (s1.contains("H") && s1.contains("M")) {
+            h = s1.split("H")[0];
+            m = s1.split("H")[1].split("M")[0];
+        } else if (s1.contains("H") && s1.contains("S")) {
+            h = s1.split("H")[0];
+            m = "00";
+            s = s1.split("H")[1].split("S")[0];
+            t = h + ":" + m + ":" + s;
+        } else if (s1.contains("M") && s1.contains("S")) {
+            m = s1.split("M")[0];
+            s = s1.split("M")[1].split("S")[0];
+            t = m + ":" + s;
+        } else if (s1.contains("H")) {
+            h = s1.split("H")[0];
+            m = "00";
+            s = "00";
+            t = h + ":" + m + ":" + s;
         } else if (s1.contains("M")) {
-            String m = s1.split("M")[0];
-            String s = s1.split("M")[1].replace("S", "");
-            t = t.concat(m).concat(":").concat(s);
-        } else
-            t = t.concat(s1.replace("S", "sec"));
+            m = s1.split("M")[0];
+            s = "00";
+            t =  m + ":" + s;
+        } else if (s1.contains("S")) {
+            s = s1.split("S")[0] + "Sec";
+            t = s;
+        }
+
+            /*
+            if (s1.contains("H")) {
+                String h = s1.split("H")[0];
+                String s = "00", m = "00";
+                if (s1.contains("M"))
+                    m = s1.split("H")[1].split("M")[0];
+                if (s1.contains("S"))
+                    s = s1.split("H")[1].split("M")[1].replace("S", "");
+                t = h.concat(":").concat(m).concat(":").concat(s);
+            } else if (s1.contains("M")) {
+                String m = s1.split("M")[0];
+                String s = "00";
+                if (s1.contains("S"))
+                    s = s1.split("M")[1].replace("S", "");
+                t = t.concat(m).concat(":").concat(s);
+            } else
+                t = t.concat(s1.replace("S", "sec"));
+        } finally {
+//            t = t.concat(s1.replace("S", "sec"));
+        }*/
+
+
+
         return t;
     }
 
-
-    private void showAdmobInterstitial() {
-        if (this.mInterstitialAdMob != null && this.mInterstitialAdMob.isLoaded()) {
-            this.mInterstitialAdMob.show();
-        }
-    }
 
     public void addVideo(OnlineVideoListModel video) {
         videoList.add(videoList.size() == 0 ? 0 : videoList.size(), video);
@@ -144,7 +152,6 @@ public class OnlineVideoListAdapter extends XRecyclerView.Adapter<OnlineVideoLis
                 intent.putExtra("views", video.getViewsCount());
                 intent.putExtra("date", video.getUploadDate());
                 mContext.startActivity(intent);
-//                showAdmobInterstitial();
 
             }
         });
@@ -157,7 +164,7 @@ public class OnlineVideoListAdapter extends XRecyclerView.Adapter<OnlineVideoLis
         return videoList.size();
     }
 
-    private class LongOperation extends AsyncTask<String, Void, String> {
+/*    private class LongOperation extends AsyncTask<String, Void, String> {
         ImageView video_img;
         TextView tv_title;
         String str_id;
@@ -197,5 +204,5 @@ public class OnlineVideoListAdapter extends XRecyclerView.Adapter<OnlineVideoLis
         @Override
         protected void onProgressUpdate(Void... values) {
         }
-    }
+    }*/
 }

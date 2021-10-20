@@ -22,9 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
 
 import java.io.File;
 import java.text.ParseException;
@@ -88,56 +85,11 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
         preference = new SavedPreferences(mContext);
 
         getSortedArray();
-        admobInterstitialAd();
 
     }
 
     boolean isInters;
 
-    private void showAdmobInterstitial() {
-        isInters = true;
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                if (isInters) {
-                    mInterstitialAd.show();
-                }
-                super.onAdLoaded();
-            }
-
-            @Override
-            public void onAdClosed() {
-                isInters = false;
-                mInterstitialAd.loadAd(new AdRequest.Builder().build());
-                super.onAdClosed();
-            }
-        });
-    }
-
-    private InterstitialAd mInterstitialAd;
-
-    @SuppressLint("StaticFieldLeak")
-    private void admobInterstitialAd() {
-        mInterstitialAd = new InterstitialAd(mContext);
-        mInterstitialAd.setAdUnitId(mContext.getString(R.string.interstitial_ad_unit_id));
-        new AsyncTask<Void, Void, Void>() {
-            @Override
-            protected Void doInBackground(Void... params) {
-                mContext.runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        mInterstitialAd.loadAd(new AdRequest.Builder()
-                                .addTestDevice("0E9048D9285193167D9674E79562F5DC")
-                                .addTestDevice("34D19C0181647FFA4D8F095F773F2154")
-                                .build());
-                    }
-                });
-
-                return null;
-            }
-        }.execute();
-
-    }
 
     public void getSortedArray() {
 
@@ -199,8 +151,8 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, final int position) {
-        final VideoListModel video_l = albumList.get(position);
+    public void onBindViewHolder(MyViewHolder holder, int pos) {
+        final VideoListModel video_l = albumList.get(holder.getAdapterPosition());
         SavedPreferences preference = new SavedPreferences(mContext);
 
         final File f = new File(video_l.getPath());
@@ -279,10 +231,9 @@ public class AllVideoListAdapter extends RecyclerView.Adapter<AllVideoListAdapte
                 notifyDataSetChanged();
                 Intent intent = new Intent(mContext, PlayerActivity.class);
                 CommonUtilities.FinalVideoList = albumList;
-                intent.putExtra("position", position);
+                intent.putExtra("position", holder.getAdapterPosition());
                 mContext.startActivityForResult(intent, 1001);
 
-                showAdmobInterstitial();
 
             }
         });

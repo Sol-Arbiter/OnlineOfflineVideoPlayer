@@ -1,9 +1,11 @@
 package video.player.mp4player.videoplayer.activity;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +56,9 @@ import static android.view.View.GONE;
 import static com.android.volley.VolleyLog.TAG;
 import static io.reactivex.plugins.RxJavaPlugins.onError;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class OnlineVideoPlayer extends AppCompatActivity {
     private XRecyclerView recyclerView;
     private static String JSON_URL = "https://www.googleapis.com/youtube/v3/videos?part=contentDetails&chart=mostPopular&regionCode=IN&maxResults=10&key=";
@@ -62,13 +67,15 @@ public class OnlineVideoPlayer extends AppCompatActivity {
     String videoId = "", title = "", description = "", date = "", views = "";
     String channelId = "";
     TextView tvTitle, tvUploadDate, tvDescription, tvView, info;
-    ProgressBar loading;
+    ProgressBar loading,dProgress;
     LinearLayout llShare, llWhatsapp;
     Button hideDetails, showDetails;
     ImageView downloadVideo;
     String nextPageToken = "";
     int nextPagesCount = 0;
 
+    ExecutorService executor = Executors.newFixedThreadPool(1);
+    Handler handler = new Handler(Looper.getMainLooper());
 
     private final YouTubeExtractor extractor = YouTubeExtractor.create();
 
@@ -122,6 +129,7 @@ public class OnlineVideoPlayer extends AppCompatActivity {
         hideDetails = findViewById(R.id.diogs_hide);
         showDetails = findViewById(R.id.diogs_show);
         loading = findViewById(R.id.loading);
+        dProgress = findViewById(R.id.progressBar);
         downloadVideo = findViewById(R.id.download_video);
 
 
@@ -191,7 +199,8 @@ public class OnlineVideoPlayer extends AppCompatActivity {
         @Override
         public void run() {
             try {
-                YouTubeExtractionResult result = extractor.extract("watch?v="+videoId)
+
+                YouTubeExtractionResult result = extractor.extract("watch?v=" + videoId)
                         .blockingGet();
                 Log.e("Video Uri ", result.getHd720VideoUri().toString());
             } catch (Exception e) {
@@ -199,6 +208,8 @@ public class OnlineVideoPlayer extends AppCompatActivity {
             }
         }
     });
+
+
     private void clickHandlers() {
         llShare.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -243,13 +254,35 @@ public class OnlineVideoPlayer extends AppCompatActivity {
         downloadVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                dProgress.setVisibility(View.VISIBLE);
                 new Handler().post(new Runnable() {
                     @Override
                     public void run() {
-                        YouTubeExtractionResult result = extractor.extract("watch?v="+videoId)
-                                .blockingGet();
-                        Log.e("Video Uri >>>>>  ", result.getHd720VideoUri().toString());
+                        AsyncTask.execute(new Runnable() {
+                            @Override
+                            public void run() {
+                                //TODO your background code
+                                YouTubeExtractionResult result = extractor.extract("watch?v=" + videoId)
+                                        .blockingGet();
+                                Log.e("Video Uri ", result.getHd720VideoUri().toString());
+
+                            }
+                        });
+                       /* executor.execute(new Runnable() {
+                            @Override
+                            public void run() {
+
+                               //Background work here
+
+                                handler.post(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        dProgress.setVisibility(GONE);
+                                        //UI Thread work here
+                                    }
+                                });
+                            }
+                        });*/
                     }
                 });
 

@@ -20,8 +20,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import video.player.mp4player.videoplayer.R;
@@ -30,7 +28,6 @@ import video.player.mp4player.videoplayer.Utils.SavedPreferences;
 public class MainActivity extends AppCompatActivity {
     SavedPreferences preferenceObject;
     private BottomNavigationView bottomNavigationView;
-    private AdView mAdView;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -54,9 +51,6 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.nav_view);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
         loadFragment(new OfflineVideoFragment(), false);
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
 
     }
 

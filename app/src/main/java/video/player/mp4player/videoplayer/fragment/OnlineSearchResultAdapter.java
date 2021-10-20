@@ -17,7 +17,6 @@ import video.player.mp4player.videoplayer.R;
 import video.player.mp4player.videoplayer.activity.OnlineVideoPlayer;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.google.android.gms.ads.AdRequest;
 
 import java.util.ArrayList;
 
@@ -45,47 +44,7 @@ public class OnlineSearchResultAdapter extends RecyclerView.Adapter<OnlineSearch
         this.mContext = mContext;
         this.category_list = category_list;
 
-        mInterstitialAdMob = showAdmobFullAd(mContext);
-        this.mInterstitialAdMob.loadAd(new AdRequest.Builder()
-                .addTestDevice("0E9048D9285193167D9674E79562F5DC")
-                .addTestDevice("34D19C0181647FFA4D8F095F773F2154")
-                .build());
-
     }
-
-
-    private com.google.android.gms.ads.InterstitialAd mInterstitialAdMob;
-
-    private com.google.android.gms.ads.InterstitialAd showAdmobFullAd(Context context) {
-        com.google.android.gms.ads.InterstitialAd interstitialAd = new com.google.android.gms.ads.InterstitialAd(context);
-        interstitialAd.setAdUnitId(context.getString(R.string.interstitial_ad_unit_id));
-        interstitialAd.setAdListener(new com.google.android.gms.ads.AdListener() {
-            @Override
-            public void onAdClosed() {
-                mInterstitialAdMob.loadAd(new AdRequest.Builder()
-                        .addTestDevice("0E9048D9285193167D9674E79562F5DC")
-                        .addTestDevice("34D19C0181647FFA4D8F095F773F2154")
-                        .build());
-            }
-
-            @Override
-            public void onAdLoaded() {
-            }
-
-            @Override
-            public void onAdOpened() {
-            }
-        });
-        return interstitialAd;
-    }
-
-
-    private void showAdmobInterstitial() {
-        if (this.mInterstitialAdMob != null && this.mInterstitialAdMob.isLoaded()) {
-            this.mInterstitialAdMob.show();
-        }
-    }
-
 
     @Override
     public OnlineSearchResultAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -110,7 +69,6 @@ public class OnlineSearchResultAdapter extends RecyclerView.Adapter<OnlineSearch
                 Intent intent = new Intent(mContext, OnlineVideoPlayer.class);
                 intent.putExtra("video_id", search_video_list.getMsvl_videoId());
                 mContext.startActivity(intent);
-                showAdmobInterstitial();
 
 
             }

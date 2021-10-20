@@ -70,8 +70,7 @@ dependencies {
     //YouTubePlayer
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:8.0.1'
 
-    //Ads
-    implementation 'com.google.android.gms:play-services-ads:19.0.0'
+
     //intro_screen
     implementation project(':material-intro-screen')
     //player
